@@ -1,0 +1,229 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg143Centhgado/get-cent-hgado-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg143Centhgado/update-cent-hgado",
+      "PARAMETER": "Tbasg143Centhgado bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg143Centhgado/insert-cent-hgado",
+      "PARAMETER": "Tbasg143Centhgado bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg143Centhgado/estado-cent-hgado",
+      "PARAMETER": "Tbasg143Centhgado bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,
+      "NAME": "CDGO_CENTHGADO",
+      "NAME_DTO": "cdgoCenthgado",
+	  "NAME_DTO_VAL": "cdgoCenthgado",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_CIF",
+      "NAME_DTO": "desgCif",
+	  "NAME_DTO_VAL": "desgCif",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "CIF",
+      "LABEL_TABLE": "CIF",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 9,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre",
+      "LABEL_TABLE": "Nombre",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_DOMSOCIAL",
+      "NAME_DTO": "desgDomsocial",
+	  "NAME_DTO_VAL": "desgDomsocial",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Domicilio Social",
+      "LABEL_TABLE": "Domicilio Social",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 100,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_NACION",
+      "NAME_DTO": "cdgoNacion",
+	  "NAME_DTO_VAL": "pais",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "País",
+      "LABEL_TABLE": "País",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg134Nacion/get-nacion-active-list-ascendente",
+        "FIELD_ID": "cdgoNacion",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

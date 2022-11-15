@@ -1,0 +1,154 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg264AmbitoPuert/get-ambito-puerto-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg264AmbitoPuert/update-ambito-puerto",
+      "PARAMETER": "Tbasg264AmbitoPuert bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg264AmbitoPuert/insert-ambito-puerto",
+      "PARAMETER": "Tbasg264AmbitoPuert bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg264AmbitoPuert/estado-ambito-puerto",
+      "PARAMETER": "Tbasg264AmbitoPuert bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,
+      "NAME": "CDGO_PUERTO",
+      "NAME_DTO": "cdgoPuerto",
+	  "NAME_DTO_VAL": "cdgoPuerto",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_PUERTO",
+      "NAME_DTO": "desgPuerto",
+	  "NAME_DTO_VAL": "desgPuerto",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre del ámbito puerto",
+      "LABEL_TABLE": "Ámbito Puerto",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

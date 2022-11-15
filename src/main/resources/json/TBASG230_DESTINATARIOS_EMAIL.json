@@ -1,0 +1,154 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg230DestinatariosEmail/get-destinatarios-email-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg230DestinatariosEmail/update-destinatario-email",
+      "PARAMETER": "Tbasg230DestinatariosEmail bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg230DestinatariosEmail/insert-destinatarios-email",
+      "PARAMETER": "Tbasg230DestinatariosEmail bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg230DestinatariosEmail/estado-destinatario-email",
+      "PARAMETER": "Tbasg230DestinatariosEmail bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "DESG_DIRECCION_EMAIL",
+      "NAME_DTO": "desgDireccionEmail",
+	  "NAME_DTO_VAL": "desgDireccionEmail",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Dirección de correo",
+      "LABEL_TABLE": "Dirección Email",
+      "MIN_LENGTH": 8,
+      "MAX_LENGTH": 100,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre y Apellidos",
+      "LABEL_TABLE": "Nombre",
+      "MIN_LENGTH": 8,
+      "MAX_LENGTH": 100,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NIVEL_DE_ENVIO",
+      "NAME_DTO": "desgNivelDeEnvio",
+	  "NAME_DTO_VAL": "desgNivelDeEnvio",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nivel de Envío",
+      "LABEL_TABLE": "Nivel de Envío",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_AREA_ACTIVIDAD",
+      "NAME_DTO": "cdgoAreaActividad",
+	  "NAME_DTO_VAL": "cdgoAreaActividad",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Area Actividad",
+      "LABEL_TABLE": "Area de Actividad",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg105Areactivi/get-are-activi-list-combo",
+        "FIELD_ID": "cdgoAreact",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

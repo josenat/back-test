@@ -1,0 +1,154 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg114Gradoinci/get-grado-inci-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg114Gradoinci/update-grado-inci",
+      "PARAMETER": "Tbasg114Gradoinci bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg114Gradoinci/insert-grado-inci",
+      "PARAMETER": "Tbasg114Gradoinci bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg114Gradoinci/estado-grado-inci",
+      "PARAMETER": "Tbasg114Gradoinci bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "CDGO_GRADO",
+      "NAME_DTO": "cdgoGrado",
+	  "NAME_DTO_VAL": "cdgoGrado",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Grado Incidencia",
+      "LABEL_TABLE": "Grado Infracción",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

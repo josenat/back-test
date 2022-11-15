@@ -1,0 +1,406 @@
+{
+  "SCREEN": {
+    "TYPE": 2,
+    "WS": "/tbasg143Centhgado/get-cent-hgado-active-list-ascendente",
+    "FIELD_ID": "cdgoCenthgado",
+    "FIELD_DESC": "desgNombre"
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg108Centmedic/get-cent-medic-list-asc-cent-hgado?cdgoCenthgado=",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg108Centmedic/update-cent-medic",
+      "PARAMETER": "Tbasg108Centmedic bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg108Centmedic/insert-cent-medic",
+      "PARAMETER": "Tbasg108Centmedic bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg108Centmedic/estado-cent-medic",
+      "PARAMETER": "Tbasg108Centmedic bean"
+    }
+  },
+  "COLUMNS": [
+  
+    {
+      "NAME": "CIF",
+      "NAME_DTO": "desgCif",
+	  "NAME_DTO_VAL": "desgCif",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "CIF",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre Centro",
+      "LABEL_TABLE": "Centro Medico",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+	  "PK": true,
+      "NAME": "CDGO_CENMED",
+      "NAME_DTO": "cdgoCenmed",
+	  "NAME_DTO_VAL": "cdgoCenmed",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_CENTHGADO",
+      "NAME_DTO": "cdgoCenthgado",
+	  "NAME_DTO_VAL": "cdgoCenthgado",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/get-cent-hgado-active-list-ascendente",
+        "FIELD_ID": "cdgoCenthgado",
+		"FIELD_NIF": "desgCif",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "CDGO_SAP",
+      "NAME_DTO": "cdgoSap",
+	  "NAME_DTO_VAL": "cdgoSap",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código SAP",
+      "LABEL_TABLE": "Código SAP",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_REF",
+      "NAME_DTO": "cdgoRef",
+	  "NAME_DTO_VAL": "cdgoRef",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código REF",
+      "LABEL_TABLE": "Código REF",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }, 
+    {
+      "NAME": "DESG_NIFDIRECTOR",
+      "NAME_DTO": "desgNifdirector",
+	  "NAME_DTO_VAL": "desgNifdirector",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "NIF Director",
+      "LABEL_TABLE": "NIF Director",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMDIRECTOR",
+      "NAME_DTO": "desgNomdirector",
+	  "NAME_DTO_VAL": "desgNomdirector",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre Director",
+      "LABEL_TABLE": "Nombre Director",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_DOMCENTRO",
+      "NAME_DTO": "desgDomcentro",
+	  "NAME_DTO_VAL": "desgDomcentro",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Domicilio Centro",
+      "LABEL_TABLE": "Domicilio Centro",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 100,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_TELEFONO",
+      "NAME_DTO": "desgTelefono",
+	  "NAME_DTO_VAL": "desgTelefono",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Teléfono",
+      "LABEL_TABLE": "Teléfono",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_HOMOLOGA",
+      "NAME_DTO": "fchaHomologa",
+	  "NAME_DTO_VAL": "fchaHomologa",
+      "TYPE": "DATE",
+      "LABEL_FORM": "Fecha Homologación",
+      "LABEL_TABLE": "Fecha Homologación",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_VALIDEZ",
+      "NAME_DTO": "fchaValidez",
+	  "NAME_DTO_VAL": "fchaValidez",
+      "TYPE": "DATE",
+      "LABEL_FORM": "Fecha Validez",
+      "LABEL_TABLE": "Fecha Validez",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

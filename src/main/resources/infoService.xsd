@@ -1,0 +1,144 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://renfe.com/webservicesoap"
+           targetNamespace="http://renfe.com/webservicesoap"
+           elementFormDefault="qualified">
+    <!--Se a modificado getCertificadoComplementario a getCertificadoComplementarioRequest-->
+    <xs:element name="getInfoHabilitacionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipoId" type="xs:int"/>
+                <xs:element name="id" type="xs:string"/>
+                <xs:element name="indActaPsico" nillable="true" type="xs:boolean"/>
+                <xs:element name="indActaForm" nillable="true" type="xs:boolean"/>
+                <xs:element name="indHistoric" nillable="true" type="xs:boolean"/>
+                <xs:element name="codTipoHabil" nillable="true" type="xs:integer"/>
+                <xs:element name="tipoInfra" nillable="true" type="xs:string"/>
+                <xs:element name="codAlcanceHab" nillable="true" type="xs:string"/>
+                <xs:element name="codEstado" nillable="true" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getInfoHabilitacionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getInfoHabilitacionReturn"
+                            nillable="true">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="status" type="xs:int"/>
+                            <xs:element name="message" type="xs:string"/>
+
+                            <xs:element name="InfoHabil"
+                                        nillable="true">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="Persona"
+                                                    nillable="true">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="dni" type="xs:string"/>
+                                                    <xs:element name="nombre" type="xs:string"/>
+                                                    <xs:element name="apellido1" type="xs:string"/>
+                                                    <xs:element name="apellido2" type="xs:string"/>
+                                                    <!--  INICIO PPM 171582  -->
+                                                    <xs:element name="estadoTit" type="xs:string"/>
+                                                    <xs:element name="fchaProxReci" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+
+                                        </xs:element>
+
+
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Psicofisico"
+                                                    nillable="true">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="fecProxRev" type="xs:string"/>
+                                                    <xs:element name="fecReconoc" type="xs:string"/>
+                                                    <xs:element name="observa" type="xs:string"/>
+                                                    <xs:element name="mrcaCorrVisual" type="xs:string"/>
+                                                    <xs:element name="mrcaProtAud" type="xs:string"/>
+                                                    <xs:element name="centMed" type="xs:string"/>
+                                                    <xs:element name="motivo" type="xs:string"/>
+                                                    <xs:element name="psicoAmb" type="xs:string"/>
+                                                    <xs:element name="facultativo" type="xs:string"/>
+                                                    <xs:element name="califi" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+
+                                        </xs:element>
+
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Habilitacion"
+                                                    nillable="true">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="cdgoExpedient" type="xs:int"/>
+                                                    <xs:element name="fecExpedient" type="xs:string"/>
+                                                    <xs:element name="empresa" type="xs:string"/>
+                                                    <xs:element name="tipoHab" type="xs:string"/>
+                                                    <xs:element name="ambito" type="xs:string"/>
+                                                    <xs:element name="alcanceOT" type="xs:string"/>
+                                                    <xs:element name="alcanceAmbito" type="xs:string"/>
+                                                    <xs:element name="entorno" type="xs:string"/>
+                                                    <xs:element name="linea" type="xs:string"/>
+                                                    <xs:element name="serie" type="xs:string"/>
+                                                    <xs:element name="subserie" type="xs:string"/>
+                                                    <xs:element name="especialidad" type="xs:string"/>
+                                                    <xs:element name="estado" type="xs:string"/>
+                                                    <xs:element name="fecEstado" type="xs:string"/>
+                                                    <xs:element name="observa" type="xs:string"/>
+
+                                                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Formacion"
+                                                                nillable="true">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="cdgoCurso" type="xs:string"/>
+                                                                <xs:element name="descCurso" type="xs:string"/>
+                                                                <xs:element name="observa" type="xs:string"/>
+                                                                <xs:element name="centroFor" type="xs:string"/>
+                                                                <xs:element name="tipoCurso" type="xs:string"/>
+                                                                <xs:element name="califi" type="xs:string"/>
+                                                                <xs:element name="instructor" type="xs:string"/>
+                                                                <xs:element name="fecCurso" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+
+                                                    </xs:element>
+
+                                                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Tramo"
+                                                                nillable="true">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="cdgoLinea" type="xs:string"/>
+                                                                <xs:element name="descLinea" type="xs:string"/>
+                                                                <xs:element name="cdgoEstOrigen" type="xs:string"/>
+                                                                <xs:element name="descEstOrigen" type="xs:string"/>
+                                                                <xs:element name="cdgoEstDestino" type="xs:string"/>
+                                                                <xs:element name="descEstDestino" type="xs:string"/>
+                                                                <xs:element name="estado" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+
+                                                    </xs:element>
+
+                                                </xs:sequence>
+                                            </xs:complexType>
+
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                </xs:complexType>
+
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

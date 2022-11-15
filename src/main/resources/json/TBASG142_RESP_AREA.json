@@ -1,0 +1,154 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg142RespArea/get-resp-area-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg142RespArea/update-resp-area",
+      "PARAMETER": "Tbasg142RespArea bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg142RespArea/insert-resp-area",
+      "PARAMETER": "Tbasg142RespArea bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg142RespArea/estado-resp-area",
+      "PARAMETER": "Tbasg142RespArea bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "CDGO_AREACT",
+      "NAME_DTO": "cdgoAreact",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Área de Actividad",
+      "LABEL_TABLE": "Área de Actividad",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_RESPONSABLE",
+      "NAME_DTO": "desgResponsable",
+	  "NAME_DTO_VAL": "desgResponsable",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Responsable",
+      "LABEL_TABLE": "Responsable",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 100,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_CARGO",
+      "NAME_DTO": "desgCargo",
+	  "NAME_DTO_VAL": "desgCargo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Cargo",
+      "LABEL_TABLE": "Cargo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 200,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

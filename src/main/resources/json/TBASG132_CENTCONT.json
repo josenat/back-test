@@ -1,0 +1,204 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg132Centcont/get-cent-cont-list-ascendentee",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg132Centcont/update-cent-cont",
+      "PARAMETER": "Tbasg132Centcont bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg132Centcont/insert-cent-cont",
+      "PARAMETER": "Tbasg132Centcont bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg132Centcont/estado-cent-cont",
+      "PARAMETER": "Tbasg132Centcont bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "CDGO_CENTCONT",
+      "NAME_DTO": "cdgoCentcont",
+	  "NAME_DTO_VAL": "cdgoCentcont",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código del Centro Contable",
+      "LABEL_TABLE": "Código Centro Contable",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 9,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": true,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre del Centro Contable",
+      "LABEL_TABLE": "Centro Contable",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 150,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_ARETER",
+      "NAME_DTO": "cdgoAreter",
+	  "NAME_DTO_VAL": "areaTerritorial",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Nombre del Area Territorial",
+      "LABEL_TABLE": "Área Territorial",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg141Areter/get-are-ter-active-list-ascendente",
+        "FIELD_ID": "cdgoAreter",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "DESG_BUZONCORREO",
+      "NAME_DTO": "desgBuzoncorreo",
+	  "NAME_DTO_VAL": "desgBuzoncorreo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Buzón de correo",
+      "LABEL_TABLE": "Buzón correo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 150,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

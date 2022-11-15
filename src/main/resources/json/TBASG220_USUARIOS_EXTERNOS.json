@@ -1,0 +1,179 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg220UsuariosExternos/get-usuario-externo-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg220UsuariosExternos/update-usuario-externo",
+      "PARAMETER": "Tbasg220UsuariosExternos bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg220UsuariosExternos/insert-usuario-externo",
+      "PARAMETER": "Tbasg220UsuariosExternos bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg220UsuariosExternos/estado-usuario-externo",
+      "PARAMETER": "Tbasg220UsuariosExternos bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "T220_CDGO_USU_EXT",
+      "NAME_DTO": "t220CdgoUsuExt",
+	  "NAME_DTO_VAL": "t220CdgoUsuExt",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Código tabla",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "T220_CDGO_USUARIO",
+      "NAME_DTO": "t220CdgoUsuario",
+	  "NAME_DTO_VAL": "t220CdgoUsuario",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código de usuario externo",
+      "LABEL_TABLE": "Código usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 9,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "T220_CDGO_EMPRESA",
+      "NAME_DTO": "t220CdgoEmpresa",
+	  "NAME_DTO_VAL": "desgNombreEmpresa",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Empresa",
+      "LABEL_TABLE": "Empresa",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg125Empresa/get-empresa-view-list-active",
+        "FIELD_ID": "cdgoEmpresa",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "T220_DESG_USUACT",
+      "NAME_DTO": "t220DesgUsuact",
+	  "NAME_DTO_VAL": "t220DesgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "T220_FCHA_ACT",
+      "NAME_DTO": "t220FchaAct",
+	  "NAME_DTO_VAL": "t220FchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "T220_MRCA_ACTIVO",
+      "NAME_DTO": "t220MrcaActivo",
+	  "NAME_DTO_VAL": "t220MrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

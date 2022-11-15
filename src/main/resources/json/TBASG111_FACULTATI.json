@@ -1,0 +1,254 @@
+{
+  "SCREEN": {
+    "TYPE": 1,
+    "WS": "",
+    "FIELD_ID": "",
+    "FIELD_DESC": ""
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg111Facultati/get-facultati-list-ascendente",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg111Facultati/update-facultati",
+      "PARAMETER": "Tbasg111Facultati bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg111Facultati/insert-facultati",
+      "PARAMETER": "Tbasg111Facultati bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg111Facultati/estado-facultati",
+      "PARAMETER": "Tbasg111Facultati bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,	
+      "NAME": "CDGO_FACULT",
+      "NAME_DTO": "cdgoFacult",
+	  "NAME_DTO_VAL": "cdgoFacult",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NUMCOLEGIADO",
+      "NAME_DTO": "desgNumcolegiado",
+	  "NAME_DTO_VAL": "desgNumcolegiado",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Número de Colegiado",
+      "LABEL_TABLE": "Número de Colegiado",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 20,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre",
+      "LABEL_TABLE": "Nombre",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_APELL1",
+      "NAME_DTO": "desgApell1",
+	  "NAME_DTO_VAL": "desgApell1",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Primer Apellido",
+      "LABEL_TABLE": "Primer Apellido",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 20,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_APELL2",
+      "NAME_DTO": "desgApell2",
+	  "NAME_DTO_VAL": "desgApell2",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Segundo Apellido",
+      "LABEL_TABLE": "Segundo Apellido",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 18,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_CENMED",
+      "NAME_DTO": "cdgoCenmed",
+	  "NAME_DTO_VAL": "cdgoCenmed",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg108Centmedic/get-cent-medic-active-list-ascendente",
+        "FIELD_ID": "cdgoCenmed",
+        "FIELD_DESC": "desgNombre"
+      }
+    }
+  ]
+}

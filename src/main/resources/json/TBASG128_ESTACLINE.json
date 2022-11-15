@@ -1,0 +1,280 @@
+{
+  "SCREEN": {
+    "TYPE": 2,
+    "WS": "/tbasg127Lineas/get-lineas-active-list-ascendente",
+    "FIELD_ID": "cdgoLinea",
+    "FIELD_DESC": "desgNombre"
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg128Estacline/get-estac-line-list-asc-cdgo-linea?cdgoLinea=",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg128Estacline/update-estac-line",
+      "PARAMETER": "Tbasg128Estacline bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg128Estacline/insert-estac-line",
+      "PARAMETER": "Tbasg128Estacline bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg128Estacline/estado-estac-line",
+      "PARAMETER": "Tbasg128Estacline bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,
+      "NAME": "CDGO_LINEA",
+      "NAME_DTO": "cdgoLinea",
+	  "NAME_DTO_VAL": "cdgoLinea",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre Línea",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": true,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg127Lineas/get-lineas-active-list-ascendente",
+        "FIELD_ID": "cdgoLinea",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+	  "PK": true,	
+      "NAME": "CDGO_ESTACION",
+      "NAME_DTO": "cdgoEstacion",
+	  "NAME_DTO_VAL": "cdgoEstacion",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código Estación",
+      "LABEL_TABLE": "Código Estación",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 5,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": true,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_ORDEN",
+      "NAME_DTO": "cdgoOrden",
+	  "NAME_DTO_VAL": "cdgoOrden",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Orden Nueva Estación",
+      "LABEL_TABLE": "Orden Estación/Línea",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 9,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": true,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_PK",
+      "NAME_DTO": "cdgoPk",
+	  "NAME_DTO_VAL": "cdgoPk",
+      "TYPE": "DECIMAL",
+      "LABEL_FORM": "Punto Kilométrico",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 9,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMCORTO",
+      "NAME_DTO": "desgNomcorto",
+	  "NAME_DTO_VAL": "desgNomcorto",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre Corto",
+      "LABEL_TABLE": "Nombre Corto",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 16,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMLARGO",
+      "NAME_DTO": "desgNomlargo",
+	  "NAME_DTO_VAL": "desgNomlargo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre Largo",
+      "LABEL_TABLE": "Nombre Largo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 50,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_SOPORTEDOC",
+      "NAME_DTO": "desgSoportedoc",
+	  "NAME_DTO_VAL": "desgSoportedoc",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Soporte Documental",
+      "LABEL_TABLE": "Soporte Documental",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 200,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "SCREEN": {
+    "TYPE": 2,
+    "WS": "/tbasg123Tipohabil/get-tipo-habil-list-combo",
+    "FIELD_ID": "cdgoTipohab",
+    "FIELD_DESC": "desgNombre"
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg124Ambitos/get-ambitos-tipo-hab-list-ascendente?cdgoTipohab=",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "/tbasg124Ambitos/update-ambitos",
+      "PARAMETER": "Tbasg124Ambitos bean"
+    },
+    "CREATE": {
+      "WS": "/tbasg124Ambitos/insert-ambitos",
+      "PARAMETER": "Tbasg124Ambitos bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg124Ambitos/estado-ambitos",
+      "PARAMETER": "Tbasg124Ambitos bean"
+    }
+  },
+  "COLUMNS": [
+    {
+	  "PK": true,
+      "NAME": "CDGO_AMBITOS",
+      "NAME_DTO": "cdgoAmbitos",
+	  "NAME_DTO_VAL": "cdgoAmbitos",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_NOMBRE",
+      "NAME_DTO": "desgNombre",
+	  "NAME_DTO_VAL": "desgNombre",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Ámbito",
+      "LABEL_TABLE": "Ámbito",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 256,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_GERENCIA",
+      "NAME_DTO": "cdgoGerencia",
+	  "NAME_DTO_VAL": "cdgoGerencia",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_PROVINCIA",
+      "NAME_DTO": "cdgoProvincia",
+	  "NAME_DTO_VAL": "provincia",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Provincia",
+      "LABEL_TABLE": "Provincia",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg106Provincia/get-provincia-list-active-ascendente",
+        "FIELD_ID": "cdgoProvincia",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "CDGO_TIPODEP",
+      "NAME_DTO": "cdgoTipodep",
+	  "NAME_DTO_VAL": "tipDeb",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Tipo Dependencia",
+      "LABEL_TABLE": "Tipo Dependencia",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "/tbasg140Tidepenci/get-ti-depenci-list-active-ascendente",
+        "FIELD_ID": "cdgoTipodep",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "CDGO_TIPOHAB",
+      "NAME_DTO": "cdgoTipohab",
+	  "NAME_DTO_VAL": "tipHab",
+      "TYPE": "INTEGER",
+      "LABEL_FORM": "Tipo Habilitación",
+      "LABEL_TABLE": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "FK": {
+        "WS": "/tbasg123Tipohabil/get-tipo-habil-list-combo",
+        "FIELD_ID": "cdgoTipohab",
+        "FIELD_DESC": "desgNombre"
+      }
+    }
+  ]
+}

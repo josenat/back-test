@@ -1,0 +1,156 @@
+{
+  "SCREEN": {
+    "TYPE": 2,
+    "WS": "/tbasg133Serie/get-serie-active-list-ascendente",
+    "FIELD_ID": "cdgoSerie",
+    "FIELD_DESC": "desgNombre"
+  },
+  "OPERATION": {
+    "SELECT": {
+      "WS": "/tbasg147Subserie/get-sub-serie-list-asc-cdgo-serie?cdgoSerie=",
+      "PARAMETER": ""
+    },
+    "UPDATE": {
+      "WS": "",
+      "PARAMETER": ""
+    },
+    "CREATE": {
+      "WS": "/tbasg147Subserie/insert-sub-serie",
+      "PARAMETER": "Tbasg147Subserie bean"
+    },
+    "DELETE": {
+      "WS": "/tbasg147Subserie/estado-sub-serie",
+      "PARAMETER": "Tbasg147Subserie bean"
+    }
+  },
+  "COLUMNS": [
+    
+    {
+	  "PK": true,	
+      "NAME": "CDGO_SERIE",
+      "NAME_DTO": "cdgoSerie",
+	  "NAME_DTO_VAL": "desgNombreSerie",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Código de Serie",
+      "LABEL_TABLE": "Código de Serie",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": true
+      },
+      "FK": {
+        "WS": "/tbasg133Serie/get-serie-active-list-ascendente",
+        "FIELD_ID": "cdgoSerie",
+        "FIELD_DESC": "desgNombre"
+      }
+    },
+    {
+	  "PK": true,	
+      "NAME": "CDGO_SUBSERIE",
+      "NAME_DTO": "cdgoSubserie",
+	  "NAME_DTO_VAL": "cdgoSubserie",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "Nombre de Subserie",
+      "LABEL_TABLE": "Código de SubSerie",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 10,
+      "CREATE": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": true,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "DESG_USUACT",
+      "NAME_DTO": "desgUsuact",
+	  "NAME_DTO_VAL": "desgUsuact",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Usuario",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "FCHA_ACT",
+      "NAME_DTO": "fchaAct",
+	  "NAME_DTO_VAL": "fchaAct",
+      "TYPE": "DATE",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Fecha Actualización",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    },
+    {
+      "NAME": "MRCA_ACTIVO",
+      "NAME_DTO": "mrcaActivo",
+	  "NAME_DTO_VAL": "mrcaActivo",
+      "TYPE": "CHAR",
+      "LABEL_FORM": "",
+      "LABEL_TABLE": "Activo",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "CREATE": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "MODIFY": {
+        "REQUIRED": false,
+        "HIDDEN": false,
+        "DISABLED": false
+      },
+      "FK": {
+        "WS": "",
+        "FIELD_ID": "",
+        "FIELD_DESC": ""
+      }
+    }
+  ]
+}

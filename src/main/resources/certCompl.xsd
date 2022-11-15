@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://renfe.com/webservicesoap"
+            targetNamespace="http://renfe.com/webservicesoap"
+            elementFormDefault="qualified">
+    <!--Se a modificado getCertificadoComplementario a getCertificadoComplementarioRequest-->
+    <xs:element name="getCertificadoComplementarioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idMaquinista" nillable="true"
+                             type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCertificadoComplementarioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getCertificadoComplementarioReturn"
+                             nillable="true">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="status" type="xs:int"/>
+                            <xs:element name="message" nillable="true"
+                                         type="xs:string"/>
+                            <xs:element name="pdf" type="xs:base64Binary"/>
+                            <xs:element name="fechaExpiracion" type="xs:string"/>
+                            <xs:element name="blnEsVigente" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+
