@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import renfe.com.model.dto.Tbasg123TipohabilDto;
 import renfe.com.model.entity.Tbasg123Tipohabil;
 import renfe.com.repository.Tbasg123TipohabilRepository;
+import java.util.Map;
 
 @Service
 public class Tbasg123TipohabilServiceImpl implements Tbasg123TipohabilService {
@@ -77,6 +78,11 @@ public class Tbasg123TipohabilServiceImpl implements Tbasg123TipohabilService {
 
 		return toDtos(tbasg123Tipohabils);
 	}
+	
+	public List<Tbasg123TipohabilDto> getTipoHabList(Map cdgoTipohab){
+		return toDtos(tbasg123TipohabilRepository.getTipoHabList(cdgoTipohab));
+	}
+
 
 	public List<Tbasg123TipohabilDto> getTipoHabilList() {
 		return toDtos(tbasg123TipohabilRepository.getTipoHabilList());

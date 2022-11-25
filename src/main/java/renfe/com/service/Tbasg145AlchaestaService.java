@@ -31,7 +31,7 @@ public interface Tbasg145AlchaestaService {
 	public List<Tbasg145AlchaestaDto> getAlcHaEsta(String cdgoAlchabinf, String cdgoLinea, String cdgoOrigen,
 			String cdgoDestino);
 
-	public int insertAlcHaEsta(Tbasg145Alchaesta bean);
+	public int insertAlcHaEsta(Tbasg145AlchaestaDto bean);
 
 	public int deleteAlcHaEsta(Tbasg145Alchaesta bean);
 

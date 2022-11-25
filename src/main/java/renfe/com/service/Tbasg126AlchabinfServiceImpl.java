@@ -90,7 +90,7 @@ public class Tbasg126AlchabinfServiceImpl implements Tbasg126AlchabinfService {
 		return toDtos(tbasg126AlchabinfRepository.getAlcHabInf(cdgoAlchabinf));
 	}
 
-	public int insertAlcHabInf(Tbasg126Alchabinf bean) {
+	public int insertAlcHabInf(Tbasg126AlchabinfDto bean) {
 		return tbasg126AlchabinfRepository.insertAlcHabInf(bean);
 	}
 

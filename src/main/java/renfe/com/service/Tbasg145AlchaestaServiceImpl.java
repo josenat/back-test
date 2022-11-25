@@ -115,7 +115,7 @@ public class Tbasg145AlchaestaServiceImpl implements Tbasg145AlchaestaService {
 		return toDtos(tbasg145AlchaestaRepository.getAlcHaEsta(cdgoAlchabinf, cdgoLinea, cdgoOrigen, cdgoDestino));
 	}
 
-	public int insertAlcHaEsta(Tbasg145Alchaesta bean) {
+	public int insertAlcHaEsta(Tbasg145AlchaestaDto bean) {
 		return tbasg145AlchaestaRepository.insertAlcHaEsta(bean);
 	}
 

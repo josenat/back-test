@@ -1211,7 +1211,7 @@ public class Tbasg100PersonaController {
 	
 
 	@GetMapping("/get-organizational-chart-list")
-	public ResponseEntity<List<Tbasg905OrganizationChartDto>> getOrganizationalChart(Integer level, Integer id) {
+	public ResponseEntity<List<Tbasg905OrganizationChartDto>> getOrganizationalChart(Integer level, String id) {
 		try { 
 			logger.debug("---> getOrganizationalChart level: {}", level);
 			logger.debug("---> getOrganizationalChart id: {}", id);

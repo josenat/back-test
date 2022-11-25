@@ -5,6 +5,7 @@ import java.util.Vector;
 
 import org.springframework.stereotype.Service;
 
+import renfe.com.dto.SubOptionLevelDTO;
 import renfe.com.dto.UserDTO;
 import renfe.com.dto.UserOptionDTO;
 import renfe.com.dto.UserRoleDTO;
@@ -24,5 +25,6 @@ public interface ArproService {
 	
 	public int getNumeroNivelesUsuarioRol(String user, String cdgoProceso, String cdgoSubproceso, String cdgoRolmaster);
 	
+	public List<SubOptionLevelDTO> getSubOptionLevels(String iduser, String option, String suboption, String role);
 	
 }

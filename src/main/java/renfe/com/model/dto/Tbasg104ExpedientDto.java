@@ -31,6 +31,7 @@ public class Tbasg104ExpedientDto {
 	private Date fchaExpediente;
 	private String mrcaActivo;
 	private String alcance;
+	private String cdgoEstacion;
 	
 	@Transient
 	private List suspensiones;
@@ -236,6 +237,14 @@ public class Tbasg104ExpedientDto {
 
 	public void setAlcance(String alcance) {
 		this.alcance = alcance;
+	} 
+
+	public String getCdgoEstacion() {
+		return this.cdgoEstacion;
 	}
+
+	public void setCdgoEstacion(String cdgoEstacion) {
+		this.cdgoEstacion = cdgoEstacion;
+	} 
 
 }

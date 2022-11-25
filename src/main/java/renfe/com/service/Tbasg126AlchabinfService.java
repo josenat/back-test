@@ -26,7 +26,7 @@ public interface Tbasg126AlchabinfService {
 
 	public List<Tbasg126AlchabinfDto> getAlcHabInf(String cdgoAlchabinf);
 
-	public int insertAlcHabInf(Tbasg126Alchabinf bean);
+	public int insertAlcHabInf(Tbasg126AlchabinfDto bean);
 
 	public int deleteAlcHabInfByCdgoExp(Tbasg126Alchabinf bean);
 

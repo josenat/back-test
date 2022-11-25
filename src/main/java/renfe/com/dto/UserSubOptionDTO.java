@@ -1,15 +1,11 @@
 package renfe.com.dto;
 
-import java.util.List;
-import java.util.Vector;
 
 public class UserSubOptionDTO {
 	String cdgoSubproceso;
 	String desgSubproceso;
 	String desgAyuda;
 	String cdgoEntidad;
-
-
 
 	public String getCdgoSubproceso() {
 		return cdgoSubproceso;

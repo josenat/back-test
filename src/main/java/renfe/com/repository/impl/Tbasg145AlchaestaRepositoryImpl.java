@@ -1,15 +1,24 @@
 package renfe.com.repository.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import renfe.com.model.dto.Tbasg145AlchaestaDto;
 import renfe.com.model.entity.Tbasg145Alchaesta;
 import renfe.com.repository.Tbasg145AlchaestaRepositoryCustom;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+
 public class Tbasg145AlchaestaRepositoryImpl implements Tbasg145AlchaestaRepositoryCustom {
+
+	/** The Constant logger. */
+	private static final Logger logger = LoggerFactory.getLogger(Tbasg126AlchabinfRepositoryImpl.class);
 
 	@PersistenceContext
 	private EntityManager em;
@@ -35,18 +44,33 @@ public class Tbasg145AlchaestaRepositoryImpl implements Tbasg145AlchaestaReposit
 		return sqlquery.getResultList();
 	}
 
-	public int insertAlcHaEsta(Tbasg145Alchaesta bean) {
+	@Transactional
+	public int insertAlcHaEsta(Tbasg145AlchaestaDto bean) {
+		int result = 0;		
 
 		String sqlString = "INSERT INTO PASG.TBASG145_ALCHAESTA (CDGO_ALCHABINF, CDGO_LINEA, CDGO_ORIGEN, CDGO_DESTINO, DESG_USUACT, FCHA_ACT, MRCA_ACTIVO)"
-				+ "		VALUES (?, ?, ?, ?, ?, CURRENT_DATE, ?)";
-		Query sqlquery = em.createNativeQuery(sqlString, Tbasg145Alchaesta.class);
-		sqlquery.setParameter(1, bean.getTbasg145alchaestapk().getCdgoAlchabinf());
-		sqlquery.setParameter(2, bean.getTbasg145alchaestapk().getCdgoLinea());
-		sqlquery.setParameter(3, bean.getTbasg145alchaestapk().getCdgoOrigen());
-		sqlquery.setParameter(4, bean.getTbasg145alchaestapk().getCdgoDestino());
+			+ " VALUES (?, ?, ?, ?, ?, CURRENT_DATE, ?)";
+
+		Query sqlquery = em.createNativeQuery(sqlString);
+
+		sqlquery.setParameter(1, bean.getCdgoAlchabinf());
+		sqlquery.setParameter(2, bean.getCdgoLinea());
+		sqlquery.setParameter(3, bean.getCdgoOrigen());
+		sqlquery.setParameter(4, bean.getCdgoDestino());
 		sqlquery.setParameter(5, bean.getDesgUsuact());
 		sqlquery.setParameter(6, bean.getMrcaActivo());
-		return sqlquery.executeUpdate();
+		
+		try {				
+			result = sqlquery.executeUpdate();
+			if (result > 0) {
+				logger.debug("--> Success insertAlcHaEsta");
+			}
+
+		} catch (Exception e) {
+			logger.error("--> Error insertAlcHaEsta:", e);
+		}
+
+		return result;		
 	}
 
 	public int deleteAlcHaEsta(Tbasg145Alchaesta bean) {

@@ -68,7 +68,7 @@ public class LDAPServiceImpl implements LDAPService {
 			// Obtenemos mas datos de usaurio de LDAP si existieran
 			//extractUserData(strUser, userDto, ctx);
 		} catch (Exception ex) {
-			logger.debug(ex.getMessage());
+			logger.error(ex.getMessage());
 			res = false;
 		}
 		logger.debug("FIN Buscar datos usuario en RDA.");

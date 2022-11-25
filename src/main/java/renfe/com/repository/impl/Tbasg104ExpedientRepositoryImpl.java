@@ -831,24 +831,24 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 			+ "	AND A.MRCA_ACTIVO = 'S' "
 			+ "	AND A.CDGO_PERSONA = :cdgoPersona "
 			+ "	AND A.CDGO_EMPRESA = :cdgoEmpresa "
-			+ "	AND A.CDGO_TIPOHAB = :cdgoTipoHab ";
+			+ "	AND A.CDGO_TIPOHAB = :cdgoTipohab ";
 
 		if (Objects.nonNull(bean.getCdgoSerie())) {
-			sqlString += " AND A.CDGO_SERIE = :Serie ";
+			sqlString += " AND A.CDGO_SERIE = :cdgoSerie ";
 
 			if (Objects.nonNull(bean.getCdgoSubserie())) {
-				sqlString += " AND A.CDGO_SUBSERIE = :Subserie ";
+				sqlString += " AND A.CDGO_SUBSERIE = :cdgoSubserie ";
 			} else {
 				sqlString += " AND A.CDGO_SUBSERIE IS NULL ";
 			}		
 		}
 	
 		if (Objects.nonNull(bean.getCdgoAlcanceot())) {
-			sqlString += " AND A.CDGO_ALCANCEOT = :AuxOpTren ";	
+			sqlString += " AND A.CDGO_ALCANCEOT = :cdgoAlcanceot ";	
 		}
 
 		if (Objects.nonNull(bean.getCdgoEspec())) {
-			sqlString += " AND A.CDGO_ESPEC = :Cargador ";	
+			sqlString += " AND A.CDGO_ESPEC = :cdgoEspec ";	
 		}
 		
 		if (Objects.nonNull(bean.getAlcance())) {			 
@@ -865,11 +865,11 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 		}
 	
 		if (Objects.nonNull(bean.getCdgoAlcanceambito())) {
-			sqlString += " AND A.CDGO_ALCANCEAMBITO = :AlcancesOVM ";	
+			sqlString += " AND A.CDGO_ALCANCEAMBITO = :cdgoAlcanceambito ";	
 		}		
 	
 		if (Objects.nonNull(bean.getCdgoAmbitos())) {
-			sqlString += " AND A.CDGO_AMBITOS = :Ambito ";	
+			sqlString += " AND A.CDGO_AMBITOS = :cdgoAmbitos ";	
 		}
 
 	
@@ -885,23 +885,23 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 		}
 
 		if (Objects.nonNull(bean.getCdgoTipohab())) {
-			sqlquery.setParameter("cdgoTipoHab", bean.getCdgoTipohab());
+			sqlquery.setParameter("cdgoTipohab", bean.getCdgoTipohab());
 		}
 
 		if (Objects.nonNull(bean.getCdgoSerie())) {
-			sqlquery.setParameter("Serie", bean.getCdgoSerie());
+			sqlquery.setParameter("cdgoSerie", bean.getCdgoSerie());
 
 			if (Objects.nonNull(bean.getCdgoSubserie())) {
-				sqlquery.setParameter("Subserie", bean.getCdgoSubserie());
+				sqlquery.setParameter("cdgoSubserie", bean.getCdgoSubserie());
 			} 	
 		}
 	
 		if (Objects.nonNull(bean.getCdgoAlcanceot())) {
-			sqlquery.setParameter("AuxOpTren", bean.getCdgoAlcanceot());
+			sqlquery.setParameter("cdgoAlcanceot", bean.getCdgoAlcanceot());
 		}
 
 		if (Objects.nonNull(bean.getCdgoEspec())) {
-			sqlquery.setParameter("Cargador", bean.getCdgoEspec());
+			sqlquery.setParameter("cdgoEspec", bean.getCdgoEspec());
 		}
 		
 		if (Objects.nonNull(bean.getAlcance())) {			 
@@ -918,11 +918,11 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 		}
 	
 		if (Objects.nonNull(bean.getCdgoAlcanceambito())) {
-			sqlquery.setParameter("AlcancesOVM", bean.getCdgoAlcanceambito());
+			sqlquery.setParameter("cdgoAlcanceambito", bean.getCdgoAlcanceambito());
 		}		
 	
 		if (Objects.nonNull(bean.getCdgoAmbitos())) {	
-			sqlquery.setParameter("Ambito", bean.getCdgoAmbitos());
+			sqlquery.setParameter("cdgoAmbitos", bean.getCdgoAmbitos());
 		}				
 
 		System.out.println("---> CONSULTA LANZADA: "+sqlString);
@@ -1341,38 +1341,38 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 		boolean isValid = true;
 
 		if (Objects.isNull(bean.getCdgoPersona())) {			
-			logger.error("--> Error updateExpedient: 'cdgoPersona' es requerido");
+			logger.error("--> Error insertExpediente: 'cdgoPersona' es requerido");
 			isValid = false;
 		}
 
 		if (Objects.isNull(bean.getCdgoEmpresa())) {			
-			logger.error("--> Error updateExpedient: 'cdgoEmpresa' es requerido");
+			logger.error("--> Error insertExpediente: 'cdgoEmpresa' es requerido");
 			isValid = false;
 		}
 		
 		if (Objects.isNull(bean.getCdgoTipohab())) {			
-			logger.error("--> Error updateExpedient: 'cdgoTipohab' es requerido");
+			logger.error("--> Error insertExpediente: 'cdgoTipohab' es requerido");
 			isValid = false;
 		}		
 		
 		if (Objects.isNull(bean.getCdgoAmbitos())) {			
-			logger.error("--> Error updateExpedient: 'cdgoAmbitos' es requerido");
+			logger.error("--> Error insertExpediente: 'cdgoAmbitos' es requerido");
 			isValid = false;
 		}		
 		
 		if (Objects.isNull(bean.getCdgoSociotor())) {			
-			logger.error("--> Error updateExpedient: 'cdgoSociotor' es requerido");
+			logger.error("--> Error insertExpediente: 'cdgoSociotor' es requerido");
 			isValid = false;
 		}					
 		
 		if (isValid) {
 			String sqlString = "INSERT INTO PASG.TBASG104_EXPEDIENT "
 				+ " (FCHA_EXPEDIENTE, CDGO_PERSONA, CDGO_EMPRESA, CDGO_TIPOHAB, CDGO_AMBITOS, CDGO_ALCANCEOT, CDGO_ESPEC, "
-				+ "	CDGO_ALCANCEAMBITO, DESG_TIPOINFRAESTRUC, CDGO_ENTORNO, CDGO_LINEA, CDGO_SERIE, CDGO_SUBSERIE, "
+				+ "	CDGO_ALCANCEAMBITO, DESG_TIPOINFRAESTRUC, CDGO_ENTORNO, CDGO_ESTACION, CDGO_LINEA, CDGO_SERIE, CDGO_SUBSERIE, "
 				+ "	DESG_OBSERVA, DESG_USUACT, FCHA_ACT, MRCA_ACTIVO, CDGO_ALCANAUXCAB, CDGO_SOCIOTOR) "				
 				+ "	VALUES (CURRENT_DATE, :cdgoPersona, :cdgoEmpresa, :cdgoTipohab, :cdgoAmbitos, :cdgoAlcanceot, :cdgoEspec, "
-				+ " :cdgoAlcanceambito, :desgTipoinfraestruc, :cdgoEntorno, :cdgoLinea, :cdgoSerie, :cdgoSubserie, :desgObserva, "
-				+ " :desgUsuact, CURRENT_DATE, :mrcaActivo, :cdgoAlcanauxcab, :cdgoSociotor) ";
+				+ " :cdgoAlcanceambito, :desgTipoinfraestruc, :cdgoEntorno, :cdgoEstacion, :cdgoLinea, :cdgoSerie, :cdgoSubserie, :desgObserva, "
+				+ " :desgUsuact, CURRENT_DATE, :mrcaActivo, :cdgoAlcanauxcab, :cdgoSociotor) ";			
 
 			Query sqlquery = em.createNativeQuery(sqlString);
 
@@ -1415,6 +1415,12 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 			} else { 
 				sqlquery.setParameter("cdgoEntorno", null);
 			}  
+
+			if (Objects.nonNull(bean.getCdgoEstacion())) {
+				sqlquery.setParameter("cdgoEstacion", bean.getCdgoEstacion());
+			} else { 
+				sqlquery.setParameter("cdgoEstacion", null);
+			} 			
 
 			if (Objects.nonNull(bean.getCdgoLinea())) {
 				sqlquery.setParameter("cdgoLinea", bean.getCdgoLinea());
@@ -1509,7 +1515,7 @@ public class Tbasg104ExpedientRepositoryImpl implements Tbasg104ExpedientReposit
 	}
 
 	@Transactional
-	public int updateExpedient(Tbasg104ExpedientDto bean) {
+	public int updateExpedient(Tbasg104ExpedientDto bean) { 
 		int result = 0;
 		if (Objects.nonNull(bean.getCdgoExpedient())) {
 			String sqlString = " UPDATE PASG.TBASG104_EXPEDIENT "

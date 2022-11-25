@@ -2,6 +2,7 @@ package renfe.com.repository;
 
 import java.util.List;
 
+import renfe.com.model.dto.Tbasg126AlchabinfDto;
 import renfe.com.model.entity.Tbasg126Alchabinf;
 
 public interface Tbasg126AlchabinfRepositoryCustom {
@@ -10,7 +11,7 @@ public interface Tbasg126AlchabinfRepositoryCustom {
 
 	public List<Tbasg126Alchabinf> getAlcHabInf(String cdgoAlchabinf);
 
-	public int insertAlcHabInf(Tbasg126Alchabinf bean);
+	public int insertAlcHabInf(Tbasg126AlchabinfDto bean);
 
 	public int deleteAlcHabInfByCdgoExp(Tbasg126Alchabinf bean);
 

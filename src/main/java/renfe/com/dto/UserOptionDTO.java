@@ -7,8 +7,7 @@ public class UserOptionDTO {
 	String cdgoProceso;
 	String desgProceso;
 	String desgAyuda;
-	String cdgoColor;
-	List<UserSubOptionDTO> subOption;
+	List<UserSubOptionDTO> subOptions;
 
 	public String getCdgoProceso() {
 		return cdgoProceso;
@@ -34,20 +33,12 @@ public class UserOptionDTO {
 		this.desgAyuda = desgAyuda;
 	}
 
-	public String getCdgoColor() {
-		return cdgoColor;
+	public List<UserSubOptionDTO> getSubOptions() {
+		return subOptions;
 	}
 
-	public void setCdgoColor(String cdgoColor) {
-		this.cdgoColor = cdgoColor;
-	}
-
-	public List<UserSubOptionDTO> getSubOption() {
-		return subOption;
-	}
-
-	public void setSubOption(List<UserSubOptionDTO> subOption) {
-		this.subOption = subOption;
+	public void setSubOptions(List<UserSubOptionDTO> subOptions) {
+		this.subOptions = subOptions;
 	}
 
 }

@@ -526,10 +526,11 @@ public class Tbasg100PersonaRepositoryImpl implements Tbasg100PersonaRepositoryC
 			expedientStatus.setCdgoEntorno((Integer) object[16]);
 			expedientStatus.setCdgoLinea(Util.quitarEspacios(this.convertToString(object[17])));
 			expedientStatus.setMrcaRevision(Util.quitarEspacios(this.convertToString(object[18])));
-			expedientStatus.setCdgoSubSerie(Util.quitarEspacios(this.convertToString(object[19])));
-			expedientStatus.setDesgObserva(Util.quitarEspacios(this.convertToString(object[20])));
-			expedientStatus.setDescSociedad(Util.quitarEspacios(this.convertToString(object[21])));
-			expedientStatus.setCdgoSerie(Util.quitarEspacios(this.convertToString(object[22])));
+			expedientStatus.setCdgoSerie(Util.quitarEspacios(this.convertToString(object[19])));
+			expedientStatus.setCdgoSubSerie(Util.quitarEspacios(this.convertToString(object[20])));
+			expedientStatus.setDesgObserva(Util.quitarEspacios(this.convertToString(object[21])));
+			expedientStatus.setDescSociedad(Util.quitarEspacios(this.convertToString(object[22])));
+			
 
 			resultadosDevueltos.add(expedientStatus);
 		}
@@ -1578,7 +1579,7 @@ public class Tbasg100PersonaRepositoryImpl implements Tbasg100PersonaRepositoryC
 			}
 
 		}
-		strGetExpedientesPersonaListDTO.append(" FETCH FIRST 50 ROWS ONLY");
+		//strGetExpedientesPersonaListDTO.append(" FETCH FIRST 50 ROWS ONLY");
 		System.out.println("----------------------");
 		System.out.println(strGetExpedientesPersonaListDTO.toString());
 		System.out.println("----------------------");
@@ -2753,7 +2754,7 @@ public class Tbasg100PersonaRepositoryImpl implements Tbasg100PersonaRepositoryC
 
 	}
 
-	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, Integer id) {
+	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, String id) {
 
 		String sqlString;
 		Query sqlquery;
@@ -2797,7 +2798,7 @@ public class Tbasg100PersonaRepositoryImpl implements Tbasg100PersonaRepositoryC
 				String areaId = deliveryAreasList.get(0);
 
 				sqlString = "SELECT " + " REP.ID_CENTRO, REP.ID_AREA, REP.NOMBRE_CENTRO, REP.FCHA_ALTA, REP.FCHA_BAJA "
-						+ "	FROM PDSN.TBDSNA09_CENTRO_REPARTO REP " + " WHERE REP.ID_AREA = :areaId "
+						+ "	FROM PDSN.TBDSNA09_CENTRO_REPARTO REP " + " WHERE REP.ID_AREA = :areaId and REP.FCHA_BAJA is null"
 						+ " ORDER BY REP.ID_CENTRO ";
 
 				sqlquery = em.createNativeQuery(sqlString);
@@ -2813,14 +2814,41 @@ public class Tbasg100PersonaRepositoryImpl implements Tbasg100PersonaRepositoryC
 					row.setIdArea(Util.quitarEspacios(item[1]));
 					row.setNombreCentro(Util.quitarEspacios(item[2]));
 					row.setFchaAlta(dateFormat.format(item[3]));
-					row.setFchaBaja(dateFormat.format(item[4]));
+					resultList.add(row);
+				}
+			}else {
+				sqlString = "SELECT * FROM PASG.TBASG100_PERSONA WHERE CDGO_ARETER = :cdgoAreter";
+
+				sqlquery = em.createNativeQuery(sqlString);
+				if (Objects.nonNull(id))
+					sqlquery.setParameter("cdgoAreter", id);
+				results = sqlquery.getResultList();
+
+				for (Object[] item : results) {
+					Tbasg905OrganizationChartDto row = new Tbasg905OrganizationChartDto();
+					row.setId(Util.quitarEspacios(item[2]));
+					row.setDesgNombre(Util.quitarEspacios(item[3]).concat(" ").concat(Util.quitarEspacios(item[4])).concat(" ").concat(Util.quitarEspacios(item[5])));
 					resultList.add(row);
 				}
 			}
 			break;
 
 		case 3:
+			sqlString = "SELECT NOMBRE FROM PDSN.TBDSNA10_MAQUINISTAS WHERE ID_CENTRO = :idCentro ";
 
+			sqlquery = em.createNativeQuery(sqlString);
+			if (Objects.nonNull(id))
+				sqlquery.setParameter("idCentro", id);
+			List<String> deliveryMaquinistasList = sqlquery.getResultList();
+			if (!deliveryMaquinistasList.isEmpty()) {
+				
+				for (String item : deliveryMaquinistasList) {
+					Tbasg905OrganizationChartDto row = new Tbasg905OrganizationChartDto();
+					row.setDesgNombre(Util.quitarEspacios(item));
+					resultList.add(row);
+				}
+				
+			}
 			break;
 
 		case 4:

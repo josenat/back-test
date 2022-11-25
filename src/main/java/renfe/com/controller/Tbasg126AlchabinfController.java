@@ -134,12 +134,12 @@ public class Tbasg126AlchabinfController {
 		}
 	}
 
-	@GetMapping("/insert-alc-hab-inf")
-	public ResponseEntity<?> insertAlcHabInf(Tbasg126Alchabinf bean) {
-		// Generated from a INSERT found in an XML
+	@PostMapping("/insert-alc-hab-inf")
+	public ResponseEntity<Integer> insertAlcHabInf(@RequestBody Tbasg126AlchabinfDto bean) {
 		try {
 			int tbasg126AlchabinfDto = tbasg126AlchabinfService.insertAlcHabInf(bean);
 			return new ResponseEntity<>(tbasg126AlchabinfDto, HttpStatus.OK);
+
 		} catch (Exception e) {
 			logger.error("insertAlcHabInf []", e);
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

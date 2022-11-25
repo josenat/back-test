@@ -56,7 +56,7 @@ public interface Tbasg128EstaclineRepositoryCustom {
 
 	public List<Tbasg128Estacline> getEstacLineTramoByPKAsc(String cdgoLinea, String cdgoOrigen, String cdgoDestino);
 
-	public List<Tbasg128Estacline> getEstacLineListByLineAsc(String cdgoLinea);
+	public List<Tbasg128EstaclineDto> getEstacLineListByLineAsc(String cdgoLinea);
 
 	public List<Tbasg128Estacline> getEstacLineListByEstacionAsc(String cdgoEstacion);
 
@@ -67,6 +67,8 @@ public interface Tbasg128EstaclineRepositoryCustom {
 	public int insertEstacLine(Tbasg128Estacline bean);
 
 	public int updateEstacLine(Tbasg128Estacline bean);
+	
+	public int updateEstacLineCdgoOrden(Tbasg128Estacline bean);
 	
 	public int estadoEstacLine(Tbasg128Estacline bean);
 

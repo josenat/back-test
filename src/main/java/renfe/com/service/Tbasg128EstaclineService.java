@@ -83,6 +83,8 @@ public interface Tbasg128EstaclineService {
 
 	public int updateEstacLine(Tbasg128Estacline bean);
 	
+	public int updateEstacLineCdgoOrden(Tbasg128Estacline bean);
+	
 	public int estadoEstacLine(Tbasg128Estacline bean);
 
 	public int deleteEstacLine(Tbasg128Estacline bean);

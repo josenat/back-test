@@ -1,5 +1,6 @@
 package renfe.com.repository.impl;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -133,12 +134,12 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 			
 			estacline.setCdgoLinea((String)object[0]);	
 			estacline.setCdgoEstacion((String)object[1]);
-			estacline.setCdgoOrden((Integer) object[2]);
-			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3]));
+			estacline.setCdgoOrden(Integer.valueOf((String) object[2]));
+			estacline.setCdgoPk((BigDecimal) object[3]);
 			estacline.setDesgNomcorto((String)object[4]);
 			estacline.setDesgNomlargo((String)object[5]);
 			estacline.setDesgUsuact((String)object[6]);
-			estacline.setFchaAct((Date)object[7]);
+			estacline.setFchaAct(String.valueOf((Date) object[7]));
 			estacline.setMrcaActivo(String.valueOf((Character) object[8]));
 			estacline.setDesgSoportedoc((String)object[9]);
 
@@ -162,12 +163,12 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 			
 			estacline.setCdgoLinea((String)object[0]);	
 			estacline.setCdgoEstacion((String)object[1]);
-			estacline.setCdgoOrden((Integer) object[2]);
-			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3]));
+			estacline.setCdgoOrden(Integer.valueOf((String) object[2]));
+			estacline.setCdgoPk((BigDecimal) object[3]);
 			estacline.setDesgNomcorto((String)object[4]);
 			estacline.setDesgNomlargo((String)object[5]);
 			estacline.setDesgUsuact((String)object[6]);
-			estacline.setFchaAct((Date)object[7]);
+			estacline.setFchaAct(String.valueOf((Date) object[7]));
 			estacline.setMrcaActivo(String.valueOf((Character) object[8]));
 			estacline.setDesgSoportedoc((String)object[9]);
 
@@ -221,8 +222,8 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 			estaclinePK.setCdgoLinea((String)object[0]);	
 			estaclinePK.setCdgoEstacion((String)object[1]);
 			estacline.setTbasg128estaclinepk(estaclinePK);
-			estacline.setCdgoOrden((Integer) object[2]);
-			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3]));
+			estacline.setCdgoOrden(Integer.valueOf((String) object[2]));
+			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3])); 
 			estacline.setDesgNomcorto((String)object[4]);
 			estacline.setDesgNomlargo((String)object[5]);
 			estacline.setDesgUsuact((String)object[6]);
@@ -253,7 +254,7 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 			estaclinePK.setCdgoLinea((String)object[0]);	
 			estaclinePK.setCdgoEstacion((String)object[1]);
 			estacline.setTbasg128estaclinepk(estaclinePK);
-			estacline.setCdgoOrden((Integer) object[2]);
+			estacline.setCdgoOrden(Integer.valueOf((String) object[2]));
 			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3]));
 			estacline.setDesgNomcorto((String)object[4]);
 			estacline.setDesgNomlargo((String)object[5]);
@@ -347,7 +348,7 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 			estaclinePK.setCdgoLinea((String)object[0]);	
 			estaclinePK.setCdgoEstacion((String)object[1]);
 			estacline.setTbasg128estaclinepk(estaclinePK);
-			estacline.setCdgoOrden((Integer) object[2]);
+			estacline.setCdgoOrden(Integer.valueOf((String) object[2]));
 			estacline.setCdgoPk(String.valueOf((java.math.BigDecimal) object[3]));
 			estacline.setDesgNomcorto((String)object[4]);
 			estacline.setDesgNomlargo((String)object[5]);
@@ -361,12 +362,30 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 		return resultadosDevueltos;
 	}
 
-	public List<Tbasg128Estacline> getEstacLineListByLineAsc(String cdgoLinea) {
+	public List<Tbasg128EstaclineDto> getEstacLineListByLineAsc(String cdgoLinea) {
 
-		String sqlString = "SELECT * FROM PASG.TBASG128_ESTACLINE WHERE CDGO_LINEA=:value AND MRCA_ACTIVO = 'S' ORDER BY CDGO_ORDEN";
-		Query sqlquery = em.createNativeQuery(sqlString, Tbasg128Estacline.class);
-		sqlquery.setParameter("value", cdgoLinea);
-		return sqlquery.getResultList();
+		String sqlString = "SELECT * FROM PASG.TBASG128_ESTACLINE WHERE CDGO_LINEA=:cdgoLinea AND MRCA_ACTIVO = 'S' ORDER BY CDGO_ORDEN";
+		Query sqlquery = em.createNativeQuery(sqlString);
+		sqlquery.setParameter("cdgoLinea", cdgoLinea);
+		
+		List<Object[]> results = sqlquery.getResultList();
+		List<Tbasg128EstaclineDto> resultList = new ArrayList<>();
+  
+		for (Object[] item : results) {
+		  Tbasg128EstaclineDto row = new Tbasg128EstaclineDto();
+		  row.setCdgoLinea((String) item[0]);
+		  row.setCdgoEstacion((String) item[1]);
+		  row.setCdgoOrden(Integer.valueOf((String) item[2]));
+		  row.setCdgoPk((BigDecimal) item[3]); 
+		  row.setDesgNomcorto((String) item[4]);
+		  row.setDesgNomlargo((String) item[5]);
+		  row.setDesgUsuact((String) item[6]);
+		  row.setFchaAct(String.valueOf((Date) item[7])); 
+		  row.setMrcaActivo(String.valueOf((Character) item[8]));
+		  resultList.add(row);
+		}
+  
+		return resultList;		
 	}
 
 	public List<Tbasg128Estacline> getEstacLineListByEstacionAsc(String cdgoEstacion) {
@@ -409,16 +428,17 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 	public int insertEstacLine(Tbasg128Estacline bean) {
 
 		String sqlString = "INSERT INTO PASG.TBASG128_ESTACLINE (CDGO_ESTACION, CDGO_LINEA, CDGO_ORDEN, CDGO_PK, DESG_NOMCORTO, DESG_NOMLARGO, DESG_USUACT, FCHA_ACT, DESG_SOPORTEDOC, MRCA_ACTIVO)"
-				+ "            VALUES (?, ?, 0, ?, ?, ?, ?, CURRENT_DATE, ?, ?)";
+				+ "            VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_DATE, ?, ?)";
 		Query sqlquery = em.createNativeQuery(sqlString, Tbasg128Estacline.class);
 		sqlquery.setParameter(1, bean.getTbasg128estaclinepk().getCdgoEstacion());
 		sqlquery.setParameter(2, bean.getTbasg128estaclinepk().getCdgoLinea());
-		sqlquery.setParameter(3, bean.getCdgoPk());
-		sqlquery.setParameter(4, bean.getDesgNomcorto());
-		sqlquery.setParameter(5, bean.getDesgNomlargo());
-		sqlquery.setParameter(6, bean.getDesgUsuact());
-		sqlquery.setParameter(7, bean.getDesgSoportedoc());
-		sqlquery.setParameter(8, bean.getMrcaActivo());
+		sqlquery.setParameter(3, bean.getCdgoOrden());
+		sqlquery.setParameter(4, bean.getCdgoPk());
+		sqlquery.setParameter(5, bean.getDesgNomcorto());
+		sqlquery.setParameter(6, bean.getDesgNomlargo());
+		sqlquery.setParameter(7, bean.getDesgUsuact());
+		sqlquery.setParameter(8, bean.getDesgSoportedoc());
+		sqlquery.setParameter(9, bean.getMrcaActivo());
 		return sqlquery.executeUpdate();
 	}
 
@@ -432,6 +452,17 @@ public class Tbasg128EstaclineRepositoryImpl implements Tbasg128EstaclineReposit
 		sqlquery.setParameter("nomLargo", bean.getDesgNomlargo());
 		sqlquery.setParameter("usuAct", bean.getDesgUsuact());
 		sqlquery.setParameter("soporteDoc", bean.getDesgSoportedoc());
+		sqlquery.setParameter("cdgoEstacion", bean.getTbasg128estaclinepk().getCdgoEstacion());
+		sqlquery.setParameter("cdgoLinea", bean.getTbasg128estaclinepk().getCdgoLinea());
+		return sqlquery.executeUpdate();
+	}
+	
+	public int updateEstacLineCdgoOrden(Tbasg128Estacline bean) {
+
+		String sqlString = "UPDATE PASG.TBASG128_ESTACLINE SET CDGO_ORDEN=:cdgoOrden "
+				+ "                  WHERE CDGO_ESTACION=:cdgoEstacion AND CDGO_LINEA=:cdgoLinea";
+		Query sqlquery = em.createNativeQuery(sqlString, Tbasg128Estacline.class);
+		sqlquery.setParameter("cdgoOrden", bean.getCdgoOrden());
 		sqlquery.setParameter("cdgoEstacion", bean.getTbasg128estaclinepk().getCdgoEstacion());
 		sqlquery.setParameter("cdgoLinea", bean.getTbasg128estaclinepk().getCdgoLinea());
 		return sqlquery.executeUpdate();

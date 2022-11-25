@@ -143,7 +143,7 @@ public interface Tbasg100PersonaRepositoryCustom {
 	
 	public JSONObject getLeerJson(String tabla);
 
-	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, Integer id);
+	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, String id);
 	
 	public int updateRevisionStatus(List<List<String>> expedientCodeList);
 

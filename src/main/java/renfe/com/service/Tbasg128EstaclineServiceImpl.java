@@ -236,7 +236,7 @@ public class Tbasg128EstaclineServiceImpl implements Tbasg128EstaclineService {
 	}
 
 	public List<Tbasg128EstaclineDto> getEstacLineListByLineAsc(String cdgoLinea) {
-		return toDtos(tbasg128EstaclineRepository.getEstacLineListByLineAsc(cdgoLinea));
+		return tbasg128EstaclineRepository.getEstacLineListByLineAsc(cdgoLinea);
 	}
 
 	public List<Tbasg128EstaclineDto> getEstacLineListByEstacionAsc(String cdgoEstacion) {
@@ -267,6 +267,10 @@ public class Tbasg128EstaclineServiceImpl implements Tbasg128EstaclineService {
 
 	public int updateEstacLine(Tbasg128Estacline bean) {
 		return tbasg128EstaclineRepository.updateEstacLine(bean);
+	}
+	
+	public int updateEstacLineCdgoOrden(Tbasg128Estacline bean) {
+		return tbasg128EstaclineRepository.updateEstacLineCdgoOrden(bean);
 	}
 	
 	public int estadoEstacLine(Tbasg128Estacline bean) {

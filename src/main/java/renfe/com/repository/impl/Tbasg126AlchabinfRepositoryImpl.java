@@ -1,17 +1,27 @@
 package renfe.com.repository.impl;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import renfe.com.model.dto.Tbasg126AlchabinfDto;
 import renfe.com.model.entity.Tbasg126Alchabinf;
 import renfe.com.repository.Tbasg126AlchabinfRepositoryCustom;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+
 public class Tbasg126AlchabinfRepositoryImpl implements Tbasg126AlchabinfRepositoryCustom {
+
+	/** The Constant logger. */
+	private static final Logger logger = LoggerFactory.getLogger(Tbasg126AlchabinfRepositoryImpl.class);
 
 	@PersistenceContext
 	private EntityManager em;
@@ -46,15 +56,60 @@ public class Tbasg126AlchabinfRepositoryImpl implements Tbasg126AlchabinfReposit
 		return sqlquery.getResultList();
 	}
 
-	public int insertAlcHabInf(Tbasg126Alchabinf bean) {
+	@Transactional
+	public int insertAlcHabInf(Tbasg126AlchabinfDto bean) {
+		int result      = 0;
+		boolean isValid = true;
 
-		String sqlString = "INSERT INTO PASG.TBASG126_ALCHABINF (CDGO_EXPEDIENT, DESG_USUACT, FCHA_FECACT, MRCA_ACTIVO)"
-				+ "		VALUES (?, ?, CURRENT_DATE, ?)";
-		Query sqlquery = em.createNativeQuery(sqlString, Tbasg126Alchabinf.class);
+		if (Objects.isNull(bean.getCdgoExpedient())) {
+			logger.error("--> Error insertAlcHabInf: 'cdgoExpedient' es requerido");
+			isValid = false;
+		}
+
+		if (Objects.isNull(bean.getDesgUsuact())) {
+			logger.error("--> Error insertAlcHabInf: 'desgUsuact' es requerido");
+			isValid = false;
+		}
+
+		if (Objects.isNull(bean.getMrcaActivo())) {
+			logger.error("--> Error insertAlcHabInf: 'mrcaActivo' es requerido");
+			isValid = false;
+		}
+
+		String sqlString = "INSERT INTO PASG.TBASG126_ALCHABINF (CDGO_EXPEDIENT, DESG_USUACT, FCHA_FECACT, MRCA_ACTIVO) VALUES (?, ?, CURRENT_DATE, ?)";
+
+		Query sqlquery = em.createNativeQuery(sqlString);
+
 		sqlquery.setParameter(1, bean.getCdgoExpedient());
 		sqlquery.setParameter(2, bean.getDesgUsuact());
 		sqlquery.setParameter(3, bean.getMrcaActivo());
-		return sqlquery.executeUpdate();
+		
+		if (isValid) {
+			try {				
+				if (sqlquery.executeUpdate() > 0) {
+					logger.debug("--> Success insertAlcHabInf");
+
+					sqlString = " SELECT IDENTITY_VAL_LOCAL() AS identity_val FROM SYSIBM.SYSDUMMY1 ";
+					sqlquery = em.createNativeQuery(sqlString);	
+					
+					List<BigDecimal> results = sqlquery.getResultList();
+			
+					BigDecimal res = null;
+					for (BigDecimal item : results) {
+						res = item;
+					}
+			
+					result = res.intValue();
+
+					logger.debug("--> insertAlcHabInf ID: {}", result);
+				}
+
+			} catch (Exception e) {
+				logger.error("--> Error insertAlcHabInf:", e);
+			}
+		}			
+
+		return result;
 	}
 
 	public int deleteAlcHabInfByCdgoExp(Tbasg126Alchabinf bean) {

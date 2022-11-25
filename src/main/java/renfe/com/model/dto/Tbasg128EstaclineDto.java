@@ -1,5 +1,6 @@
 package renfe.com.model.dto;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Tbasg128EstaclineDto {
@@ -7,12 +8,12 @@ public class Tbasg128EstaclineDto {
 	private String cdgoEstacion;
 	private String cdgoLinea;
 	private Integer cdgoOrden;
-	private String cdgoPk;
+	private BigDecimal cdgoPk;
 	private String desgNomcorto;
 	private String desgNomlargo;
 	private String desgSoportedoc;
 	private String desgUsuact;
-	private Date fchaAct;
+	private String fchaAct;
 	private String mrcaActivo;
 
 	public String getCdgoEstacion() {
@@ -39,11 +40,11 @@ public class Tbasg128EstaclineDto {
 		this.cdgoOrden = cdgoOrden;
 	}
 
-	public String getCdgoPk() {
+	public BigDecimal getCdgoPk() {
 		return this.cdgoPk;
 	}
 
-	public void setCdgoPk(String cdgoPk) {
+	public void setCdgoPk(BigDecimal cdgoPk) {
 		this.cdgoPk = cdgoPk;
 	}
 
@@ -79,11 +80,11 @@ public class Tbasg128EstaclineDto {
 		this.desgUsuact = desgUsuact;
 	}
 
-	public Date getFchaAct() {
+	public String getFchaAct() {
 		return this.fchaAct;
 	}
 
-	public void setFchaAct(Date fchaAct) {
+	public void setFchaAct(String fchaAct) {
 		this.fchaAct = fchaAct;
 	}
 

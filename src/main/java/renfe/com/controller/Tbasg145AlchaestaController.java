@@ -146,12 +146,12 @@ public class Tbasg145AlchaestaController {
 		}
 	}
 
-	@GetMapping("/insert-alc-ha-esta")
-	public ResponseEntity<?> insertAlcHaEsta(Tbasg145Alchaesta bean) {
-		// Generated from a INSERT found in an XML
+	@PostMapping("/insert-alc-ha-esta")
+	public ResponseEntity<Integer> insertAlcHaEsta(@RequestBody Tbasg145AlchaestaDto bean) {
 		try {
 			int tbasg145AlchaestaDto = tbasg145AlchaestaService.insertAlcHaEsta(bean);
 			return new ResponseEntity<>(tbasg145AlchaestaDto, HttpStatus.OK);
+
 		} catch (Exception e) {
 			logger.error("insertAlcHaEsta []", e);
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

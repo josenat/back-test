@@ -1,51 +1,28 @@
 package renfe.com.dto;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class UserRoleDTO {
 	private String cdgoRolmaster;
-	private String cdgoPgmsql;
-	private String cdgoVista;
-	private String desgClase;
-	private String desgMetdo;
 	private String desgRol;
 
+	private ArrayList<SubOptionLevelDTO> levels;
+
+	public ArrayList<SubOptionLevelDTO> getLevels() {
+		return levels;
+	}
+	
+	public void setLevels(ArrayList<SubOptionLevelDTO> levels) {
+		this.levels = levels;
+	}
+	
 	public String getCdgoRolmaster() {
 		return cdgoRolmaster;
 	}
 
 	public void setCdgoRolmaster(String cdgoRolmaster) {
 		this.cdgoRolmaster = cdgoRolmaster;
-	}
-
-	public String getCdgoPgmsql() {
-		return cdgoPgmsql;
-	}
-
-	public void setCdgoPgmsql(String cdgoPgmsql) {
-		this.cdgoPgmsql = cdgoPgmsql;
-	}
-
-	public String getCdgoVista() {
-		return cdgoVista;
-	}
-
-	public void setCdgoVista(String cdgoVista) {
-		this.cdgoVista = cdgoVista;
-	}
-
-	public String getDesgClase() {
-		return desgClase;
-	}
-
-	public void setDesgClase(String desgClase) {
-		this.desgClase = desgClase;
-	}
-
-	public String getDesgMetdo() {
-		return desgMetdo;
-	}
-
-	public void setDesgMetdo(String desgMetdo) {
-		this.desgMetdo = desgMetdo;
 	}
 
 	public String getDesgRol() {
@@ -55,4 +32,6 @@ public class UserRoleDTO {
 	public void setDesgRol(String desgRol) {
 		this.desgRol = desgRol;
 	}
+	
+	
 }

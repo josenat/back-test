@@ -481,15 +481,14 @@ public class Tbasg128EstaclineController {
 
 	@GetMapping("/get-estac-line-list-by-line-asc")
 	public ResponseEntity<List<Tbasg128EstaclineDto>> getEstacLineListByLineAsc(String cdgoLinea) {
-		// Generated from a SELECT found in an XML
 		try {
-			List<Tbasg128EstaclineDto> tbasg128EstaclineDto = tbasg128EstaclineService
-					.getEstacLineListByLineAsc(cdgoLinea);
-
+			List<Tbasg128EstaclineDto> tbasg128EstaclineDto = tbasg128EstaclineService.getEstacLineListByLineAsc(cdgoLinea);
 			if (tbasg128EstaclineDto.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
+
 			return new ResponseEntity<>(tbasg128EstaclineDto, HttpStatus.OK);
+
 		} catch (Exception e) {
 			logger.error("getEstacLineListByLineAsc []", e);
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -566,6 +565,18 @@ public class Tbasg128EstaclineController {
 			return new ResponseEntity<>(tbasg128EstaclineDto, HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error("updateEstacLine []", e);
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@PutMapping("/update-estac-line-cdgo-orden")
+	public ResponseEntity<?> updateEstacLineCdgoOrden(@RequestBody Tbasg128Estacline bean) {
+		// Generated from a UPDATE found in an XML
+		try {
+			int tbasg128EstaclineDto = tbasg128EstaclineService.updateEstacLineCdgoOrden(bean);
+			return new ResponseEntity<>(tbasg128EstaclineDto, HttpStatus.OK);
+		} catch (Exception e) {
+			logger.error("updateEstacLineCdgoOrden []", e);
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

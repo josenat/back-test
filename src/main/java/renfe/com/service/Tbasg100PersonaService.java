@@ -160,7 +160,7 @@ public interface Tbasg100PersonaService {
 
 	public Object getPdfAltasBajasFicheroRefDoExecute(List<Integer> codigos, String fecDesde, String fecHasta, String alta, String baja) throws Exception;	
 
-	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, Integer id);
+	public List<Tbasg905OrganizationChartDto> getOrganizationalChart(Integer level, String id);
 
 	public int updateRevisionStatus(List<List<String>> expedientCodeList);
 }
